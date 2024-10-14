@@ -4,7 +4,7 @@ import { MdOutlinePhoneInTalk } from "react-icons/md";
 import CasesGraph from "./CasesGraph";
 
 const API_KEY = "585655bdab539489240aed378f6a6cff";
-const city = "Erode"
+const city = "Coimbatore"
 const Weather = () => {
   const [temperature, setTemperature] = useState(0);
   const [loading, setLoading] = useState(true);
