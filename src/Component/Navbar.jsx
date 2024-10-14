@@ -1,3 +1,4 @@
+import { BiPrinter } from "react-icons/bi";
 import { FaAngleDown, FaRegUserCircle } from "react-icons/fa";
 import { IoIosCalculator } from "react-icons/io";
 import { LuMonitor } from "react-icons/lu";
@@ -23,7 +24,7 @@ const Navbar = () => {
           <TfiAnnouncement />
         </li>
         <li className="bg-white rounded-full p-2 cursor-pointer hover:bg-blue-500 hover:scale-125 transition-transform duration-100">
-          <LuMonitor />
+          <BiPrinter />
         </li>
         <li className="bg-white rounded-full p-2 cursor-pointer hover:bg-blue-500 hover:scale-125 transition-transform duration-100">
           <LuMonitor />
