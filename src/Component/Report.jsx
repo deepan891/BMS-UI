@@ -1,9 +1,10 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { TfiDownload } from "react-icons/tfi";
+import icon from "../assets/icon.png";
 
 const Report = () => {
-  let icon = "📄";
+  // let icon = "📄";
   const [reportData, setReportData] = useState([]);
 
   useEffect(() => {
@@ -13,7 +14,7 @@ const Report = () => {
   const fetchData = async () => {
     try {
       let response = await axios.get(
-        `http://localhost:8000/dashboard/documents?name=report`
+        `http://localhost:8000/dashboard/documents?name=management`
       );
       setReportData(response.data?.data?.documentData);
     } catch (error) {
@@ -22,21 +23,23 @@ const Report = () => {
     }
   };
   return (
-    <div className="max-h-[400px] p-6 bg-white rounded-md shadow-md space-y-4 overflow-y-scroll">
-      <h2 className="text-xl font-semibold mb-4">
+    <div className="max-h-[500px] p-6 bg-white rounded-md shadow-md space-y-4 overflow-y-auto">
+      <h2 className="text-xl font-semibold mb-4 underline">
         Management Reports Generated
       </h2>
       <ul className="space-y-2">
-        {reportData.map((report) => (
+        {reportData?.map((report) => (
           <li
             key={report.id}
-            className="flex items-center justify-between p-2 hover:bg-blue-400 hover:text-white rounded-md"
+            className="flex items-center justify-between p-2 px-4 rounded-sm hover:bg-[#3B82F6] hover:text-white group"
           >
-            <div className="flex items-center">
-              <span className="text-2xl mr-3">{icon}</span>
+            <div className="flex justify-evenly items-center gap-5">
+              <div>
+                <img src={icon} width={20} className="inline-block" />
+              </div>
               <div className="space-y-1">
-                <p className="text-sm font-semibold">{`Report ${report.name}`}</p>
-                <p className="text-xs text-gray-500">{`Created ${report.create}`}</p>
+                <p className="text-md font-semibold">{`Report ${report?.name}`}</p>
+                <p className="text-xs group-hover:text-white text-gray-500">{`Created ${report?.create}`}</p>
               </div>
             </div>
             <div className="hover:cursor-pointer">
@@ -46,7 +49,7 @@ const Report = () => {
                   .pop()}`}
                 download
               >
-                <TfiDownload className="hover:text-blue-500 text-xl" />
+                <TfiDownload className="hover:text-red-500 text-xl" />
               </a>
             </div>
           </li>

@@ -22,28 +22,28 @@ function ItemAction() {
   };
 
   return (
-    <div className="max-h-[500px] bg-blue-500 rounded-md p-6 text-white shadow-md space-y-4 overflow-y-scroll">
-      <h2 className="text-lg font-bold mb-4">Items Requiring Action</h2>
+    <div className="max-h-[510px] bg-blue-500 rounded-md p-6 text-white shadow-md space-y-4 auto">
+      <h2 className="text-xl font-bold mb-4 underline">Items Requiring Action</h2>
       <div className="flex justify-between items-center bg-blue-400 p-4 rounded-lg mb-2">
         <div className="flex items-center">
           <IoKeyOutline className="text-2xl mr-2" />
           <span>Overdue cases</span>
         </div>
-        <span className="text-2xl font-bold">{count.caseCount}</span>
+        <span className="text-2xl font-bold">{count?.caseCount}</span>
       </div>
       <div className="flex justify-between items-center bg-blue-400 p-4 rounded-lg mb-2">
         <div className="flex items-center">
           <IoShieldCheckmarkOutline className="text-2xl mr-2" />
           <span>Contractor Insurance Expiring</span>
         </div>
-        <span className="text-2xl font-bold">{count.contractorInsuranceCount}</span>
+        <span className="text-2xl font-bold">{count?.contractorInsuranceCount}</span>
       </div>
       <div className="flex justify-between items-center bg-blue-400 p-4 rounded-lg mb-2">
         <div className="flex items-center">
           <IoPeopleOutline className="text-2xl mr-2" />
           <span>Resident Information Update Requests</span>
         </div>
-        <span className="text-2xl font-bold">{count.notRegisteredResidence}</span>
+        <span className="text-2xl font-bold">{count?.notRegisteredResidence}</span>
       </div>
       {/* <div className="flex justify-between items-center bg-blue-400 p-4 rounded-lg">
         <div className="flex items-center">

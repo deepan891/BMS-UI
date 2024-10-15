@@ -26,18 +26,18 @@ const Search = () => {
     }
   };
 
-  const filteredNotes = notes.filter(
-    (note) =>
-      note?.title?.toLowerCase().includes(searchTerm?.toLowerCase()) ||
-      note?.description?.toLowerCase().includes(searchTerm?.toLowerCase())
-  );
+  // const filteredNotes = notes.filter(
+  //   (note) =>
+  //     note?.title?.toLowerCase().includes(searchTerm?.toLowerCase()) ||
+  //     note?.description?.toLowerCase().includes(searchTerm?.toLowerCase())
+  // );
   
   const handleDelete = (id) => {
     setNotes(notes.filter((note) => note.id !== id));
   };
 
   return (
-    <div className="bg-white p-4 rounded-md shadow-md w-full max-w-lg max-h-[500px] overflow-y-scroll">
+    <div className="bg-white p-4 rounded-md shadow-md max-h-[510px] overflow-y-auto">
       {/* Search bar */}
       <div className="flex items-center border-b-2 border-gray-200 pb-2 mb-4">
         <IoSearchOutline className="text-gray-400 mr-2" />

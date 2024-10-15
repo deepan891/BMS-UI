@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 function ActivityFeeds() {
   const [data, setdata] = useState([
@@ -45,20 +45,20 @@ function ActivityFeeds() {
       ],
     },
     {
-        date: "04/10/2018",
-        user: "System Supporter",
-        record: [
-          {
-            time: "15:10 am",
-            action: "Duplicate a case to building Cebu Towers",
-          },
-        ],
-      },
+      date: "04/10/2018",
+      user: "System Supporter",
+      record: [
+        {
+          time: "15:10 am",
+          action: "Duplicate a case to building Cebu Towers",
+        },
+      ],
+    },
   ]);
 
   return (
-    <div className="max-h-[400px] p-6 bg-white rounded-md shadow-md space-y-4 overflow-y-scroll">
-      <h2 className="text-xl font-semibold mb-4">Activity Feed</h2>
+    <div className="max-h-[500px] p-6 bg-white rounded-md shadow-md space-y-4 overflow-y-auto">
+      <h2 className="text-xl font-semibold mb-4 underline">Activity Feed</h2>
       <div className="space-y-4">
         {data.map(({ date, user, record }) => (
           <div key={`${date}-${user}`} className="">

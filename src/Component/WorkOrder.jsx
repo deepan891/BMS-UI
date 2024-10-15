@@ -1,8 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-
+import icon from "../assets/icon.png";
 const WorkOrder = () => {
-  let icon = "📄";
   const [reportData, setReportData] = useState([]);
 
   useEffect(() => {
@@ -22,26 +21,28 @@ const WorkOrder = () => {
   };
 
   return (
-    <div className="max-h-[400px] p-6 bg-white rounded-md shadow-md space-y-4 overflow-y-scroll">
-      <h2 className="text-xl font-semibold mb-4">Lasted Work Orders Send</h2>
-      <ul>
-        {reportData.map((report) => (
+    <div className="max-h-[500px] p-6 bg-white rounded-md shadow-md space-y-4 overflow-y-auto">
+      <h2 className="text-xl font-semibold mb-4 underline">Lasted Work Orders Send</h2>
+      <ul className="space-y-2">
+        {reportData?.map((report) => (
           <li
             key={report.id}
-            className="flex items-center justify-between p-2 px-4 rounded-sm hover:bg-blue-400 hover:text-white group "
+            className="flex items-center justify-between p-2 px-4 rounded-sm hover:bg-[#3B82F6] hover:text-white group"
           >
-            <div className="flex items-center">
-              <span className="text-2xl mr-3">{icon}</span>
+            <div className="flex justify-evenly items-center gap-5">
               <div>
-                <p className="text-sm font-semibold">{`Report ${report.name}`}</p>
-                <p className="text-xs text-gray-500">{`Created ${report.create}`}</p>
+                <img src={icon} width={20} className="inline-block" />
+              </div>
+              <div>
+                <p className="text-[16px] font-semibold">{`Report ${report?.name}`}</p>
+                <p className="text-xs group-hover:text-white text-gray-500">{`Created ${report?.create}`}</p>
               </div>
             </div>
-            <div className="hover:cursor-pointer">
+            {/* <div className="hover:cursor-pointer">
               <p className="text-sm font-semibold group-hover:text-white text-blue-500">
-                {report.id}
+                {report?.id}
               </p>
-            </div>
+            </div> */}
           </li>
         ))}
       </ul>

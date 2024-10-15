@@ -12,10 +12,10 @@ const App = () => {
   return (
     <div className="flex bg-gray-100">
       <Sidebar />
-      <div className="w-full p-6">
+      <div className="w-full max-sm:px-2 sm:p-4 md:p-6">
         <Navbar />
         <Count />
-        <div className="grid grid-cols-3 gap-5">
+        <div className="grid lg:grid-cols-3 max-sm:grid-cols-1 sm:grid-cols-2 gap-5">
           <ItemAction />
           <Search />
           <Weather />
