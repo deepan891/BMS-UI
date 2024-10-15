@@ -17,7 +17,7 @@ const Search = () => {
     };
     try {
       let response = await axios.post(
-        `http://localhost:8000/dashboard`,
+        `${import.meta.env.VITE_BACKEND_URL}/search`,
         searchData
       );
       setNotes(response.data.data);

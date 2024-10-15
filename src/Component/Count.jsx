@@ -32,8 +32,8 @@ const Count = () => {
 
   const fetchData = async () => {
     try {
-      let response = await axios.get("http://localhost:8000/dashboard");
-      setcount(response.data.data);
+      let response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/count`);
+      setcount(response?.data?.data);
     } catch (error) {
       console.log(error);
     }

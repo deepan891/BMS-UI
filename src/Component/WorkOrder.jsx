@@ -11,13 +11,14 @@ const WorkOrder = () => {
   const fetchData = async () => {
     try {
       let response = await axios.get(
-        `http://localhost:8000/dashboard/documents?name=work`
+        `${import.meta.env.VITE_BACKEND_URL}/documents?name=work`
       );
       setReportData(response.data?.data?.documentData);
     } catch (error) {
       console.log(error);
       setReportData();
     }
+    
   };
 
   return (

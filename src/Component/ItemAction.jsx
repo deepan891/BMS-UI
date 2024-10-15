@@ -14,7 +14,9 @@ function ItemAction() {
 
   const fetchData = async () => {
     try {
-      let response = await axios.get("http://localhost:8000/dashboard/action");
+      let response = await axios.get(
+        `${import.meta.env.VITE_BACKEND_URL}/action`
+      );
       setCount(response.data.data);
     } catch (error) {
       console.log(error);

@@ -12,7 +12,7 @@ const CasesGraph = () => {
 
   const fetchData = async () => {
     try {
-      let response = await axios.get("http://localhost:8000/dashboard");
+      let response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/count`);
       setCount(response.data.data);
     } catch (error) {
       console.log(error);

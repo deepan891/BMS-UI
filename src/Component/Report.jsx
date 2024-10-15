@@ -14,7 +14,7 @@ const Report = () => {
   const fetchData = async () => {
     try {
       let response = await axios.get(
-        `http://localhost:8000/dashboard/documents?name=management`
+        `${import.meta.env.VITE_BACKEND_URL}/documents?name=management`
       );
       setReportData(response.data?.data?.documentData);
     } catch (error) {
