@@ -44,7 +44,7 @@ const Report = () => {
             </div>
             <div className="hover:cursor-pointer">
               <a
-                href={`${import.meta.env.VITE_BACKEND_URL}/download/${report?.location
+                href={`${import.meta.env.VITE_BACKEND_URL}/download/uploads/${report?.location
                   ?.split("/")
                   .pop()}`}
                 download
